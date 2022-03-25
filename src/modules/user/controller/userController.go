@@ -37,3 +37,9 @@ func UpdateUser(c *gin.Context) {
 
 	c.JSON(http.StatusOK, user)
 }
+
+func DeleteUser(c *gin.Context) {
+	services.DeleteUser(c.Param("id"))
+
+	c.JSON(http.StatusNoContent, nil)
+}

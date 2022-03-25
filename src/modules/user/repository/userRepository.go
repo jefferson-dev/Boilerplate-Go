@@ -33,3 +33,10 @@ func Update(user *entity.User) (*entity.User, error) {
 
 	return user, err.Error
 }
+
+func Delete(id string, user *entity.User) error {
+
+	err := database.DB.Delete(&user, "id = ?", id)
+
+	return err.Error
+}
